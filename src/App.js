@@ -1,11 +1,11 @@
-import './App.css';
-import Button from './Component/Button/Button';
+import "./App.css";
+import Button from "./Component/Button/Button";
+import Login from "./Page/Auth/login/Login";
 
 function App() {
   return (
-    
     <>
-    <Button text="hi" color={"green"}/>
+      <Login />
     </>
   );
 }
