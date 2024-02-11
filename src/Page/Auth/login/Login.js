@@ -47,7 +47,7 @@ const Login = () => {
     console.log(data);
     try {
       setLoading(true);
-      const res = await axios.post(
+      await axios.post(
         "https://christholychurch.onrender.com/api/signin",
         data
       );

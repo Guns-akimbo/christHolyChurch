@@ -10,9 +10,16 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { ClipLoader } from "react-spinners";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+
+// import { ClipLoader } from "react-spinners";
 
 const ProfilePage = () => {
+
+  const [loading, setLoading] = useState(false);
+  const nav = useNavigate();
   const schema = yup.object({
     firstName: yup.string().required("Firstname is needed"),
     lastName: yup.string().required("lastname is needed"),
@@ -35,8 +42,31 @@ const ProfilePage = () => {
     resolver: yupResolver(schema),
   });
 
+  const onSubmit = async (data) => {
+    console.log(data);
+    try {
+      setLoading(true);
+      const res = await axios.post(
+        "https://christholychurch.onrender.com/api/signup",
+        data
+      );
+      setLoading(false);
+      toast.success("signup sucessfull");
+      setTimeout(() => {
+        nav("/login");
+      }, 5000);
+      setLoading(false);
+    } catch (err) {
+      if (err.response.data.message) {
+        toast.error(err.response.data.message);
+        setLoading(false);
+      }
+      setLoading(false);
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <main className="register">
         <div className="wrappz">
           <section className="left">
