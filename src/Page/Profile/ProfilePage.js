@@ -12,12 +12,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { ClipLoader } from "react-spinners";
 
-
-// import { ClipLoader } from "react-spinners";
 
 const ProfilePage = () => {
-
   const [loading, setLoading] = useState(false);
   const nav = useNavigate();
   const schema = yup.object({
@@ -91,13 +89,17 @@ const ProfilePage = () => {
                 </div>
               </div>
               <footer>
-                <Button
-                  text=" Submit"
-                  type={"submit"}
-                  backgroundColor={"#15acff"}
-                  fontSize={"17px"}
-                  style={{ border: "2px solid white " }}
-                />
+                {loading ? (
+                  <ClipLoader />
+                ) : (
+                  <Button
+                    text=" Submit"
+                    type={"submit"}
+                    backgroundColor={"#15acff"}
+                    fontSize={"17px"}
+                    style={{ border: "2px solid white " }}
+                  />
+                )}
               </footer>
             </div>
           </section>
