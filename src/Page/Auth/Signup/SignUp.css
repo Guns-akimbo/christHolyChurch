@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sign {
+  width: 100%;
+  height: 100vh;
+  background-color: #bfccdc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signwrap {
+  width: 80%;
+  height: 80%;
+  background: url(../../../assests/birds.png);
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signContainer {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.Logoo {
+  width: 100%;
+  height: 15%;
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  margin-top: 3%;
+  gap: 10px;
+}
+
+.Logoo img {
+  height: 60%;
+  width: 8%;
+}
+
+.signfields {
+  width: 80%;
+  height: 55%;
+  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+  /* background-color: blue; */
+}
+
+.inp {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.inpu {
+  width: 97%;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 10px;
+  /* border-bottom: 1px solid grey; */
+}
+
+.p {
+  color: red;
+  font-size: 12px;
+  margin-top: 2%;
+}
+.div {
+  width: 100%;
+}
+
+.texxt {
+  width: 77%;
+  height: 10%;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 4%;
+}
+
+.texxt p {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.signBtn {
+  margin-top: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signeyeBtn {
+  cursor: pointer;
+  position: relative;
+  right: 25px;
+  bottom: 5px;
+}
+
+.eyeBtnopen:hover {
+  color: orange;
+  transition: 0.3s ease;
+}
+
+.eyeBtn {
+  cursor: pointer;
+}
+
+.eyeBtn:hover {
+  color: orange;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .Logoo {
+    width: 100%;
+    height: 15%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+    margin-top: 3%;
+    gap: 10px;
+  }
+
+  .Logoo img {
+    height: 80%;
+    width: 20%;
+  }
+
+  .signwrap {
+    width: 80%;
+    height: 90%;
+    background: url(../../../assests/birds.png);
+    background-position: center;
+    background-size: 0%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: green; */
+  }
+  .signContainer {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+  }
+  .signfields {
+    width: 80%;
+    height: 80%;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    /* background-color: rebeccapurple; */
+  }
+
+  .inp {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .inpu {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 10px;
+    color: black;
+  }
+
+  .signBtn {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .signeyeBtn {
+    cursor: pointer;
+    position: relative;
+    left: 100px;
+    bottom: 50px;
+  }
+}

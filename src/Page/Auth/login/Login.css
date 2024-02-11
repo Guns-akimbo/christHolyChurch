@@ -15,13 +15,12 @@
 .Logoo {
   width: 100%;
   height: 15%;
-  /* background-color: green; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-size: 18px;
-  margin-top: 3%;
+  margin-top: 6%;
   gap: 10px;
 }
 
@@ -142,16 +141,15 @@
     left: 90px;
     bottom: 65px;
   }
-  
-.LoginFields {
-  width: 70%;
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 6%;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-}
 
+  .LoginFields {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 6%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
 }
