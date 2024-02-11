@@ -3,6 +3,7 @@ import "./Homescreen.css";
 import Logo from "../../assests/Logo.png";
 import Button from "../../Component/Button/Button";
 import { Link } from "react-router-dom";
+import Input from "../../Component/Input/Input";
 
 const HomeScreen = () => {
   return (

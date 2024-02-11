@@ -16,7 +16,7 @@ import { ClipLoader } from "react-spinners";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  // const nav = useNavigate();
+  const nav = useNavigate();
 
   const handleTogglePassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -53,12 +53,16 @@ const Login = () => {
       );
       setLoading(false);
       toast.success("login sucessfull");
-      // setTimeout(() => {
-      //   nav("/register");
-      // }, 5000);
+      setTimeout(() => {
+        nav("/register");
+      }, 5000);
       setLoading(false);
     } catch (err) {
-      console.log(err);
+      if (err.response.data.message) {
+        toast.error(err.response.data.message);
+        setLoading(false);
+      }
+      setLoading(false);
     }
   };
 
