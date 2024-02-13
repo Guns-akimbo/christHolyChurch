@@ -54,7 +54,7 @@ const Login = () => {
       setLoading(false);
       toast.success("login sucessfull");
       setTimeout(() => {
-        nav("/register");
+        nav("/profile");
       }, 5000);
       setLoading(false);
     } catch (err) {
