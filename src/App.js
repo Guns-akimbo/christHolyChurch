@@ -3,7 +3,7 @@ import "./App.css";
 import Login from "./Page/Auth/login/Login";
 import { Route, Routes } from "react-router-dom";
 import Homescreen from "./Page/Home/Homescreen";
-import Signup from "./Page/Auth/signup/Signup";
+import Signup from "./Page/Auth/signup/Signup"
 import ProfilePage from "./Page/Profile/ProfilePage";
 
 function App() {
