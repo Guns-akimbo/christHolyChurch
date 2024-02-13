@@ -101,7 +101,7 @@ const Login = () => {
                 {loading ? (
                   <ClipLoader />
                 ) : (
-                  <Button text="Login" style={{ width: "230px" }} />
+                  <Button text="Login" style={{ width: "230px",borderRadius:"10px solid red" }} />
                 )}
               </div>
             </div>
