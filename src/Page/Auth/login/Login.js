@@ -71,38 +71,41 @@ const Login = () => {
       <div className="log">
         <div className="logWrap">
           <div className="logs">
-            <div className="Logoo">
+            <div className="LoginLogo">
               <img src={Logo} alt="" />
               <p>Welcome Back</p>
             </div>
             <div className="LoginFields">
-              <input
-                type="text"
-                className="inpp"
-                placeholder="PhoneNumber"
-                {...register("phoneNumber")}
-              />
-              <p className="p">{errors.phoneNumber?.message} </p>
-              <input
-                type={showPassword ? "text" : "password"}
-                className="inpp"
-                placeholder="Password"
-                {...register("password")}
-              />
+              <div className="LoginInputField">
+                <input
+                  type="text"
+                  className="inpp"
+                  placeholder="PhoneNumber"
+                  {...register("phoneNumber")}
+                />
+                <p className="p">{errors.phoneNumber?.message} </p>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  className="inpp"
+                  placeholder="Password"
+                  {...register("password")}
+                />
 
-              <p className="p">{errors.password?.message} </p>
-              <div className="eyeBtn" onClick={handleTogglePassword}>
-                {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                <p className="p">{errors.password?.message} </p>
+                <div className="eyeBtn" onClick={handleTogglePassword}>
+                  {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                </div>
               </div>
 
-              {loading ? (
-                <ClipLoader />
-              ) : (
-                <Button text="Login" style={{ width: "230px" }} />
-              )}
+              <div>
+                {loading ? (
+                  <ClipLoader />
+                ) : (
+                  <Button text="Login" style={{ width: "230px" }} />
+                )}
+              </div>
             </div>
 
-            {/* <Button text="Login" width="200px" />F */}
             <div className="acc">
               <p className="texts">
                 Don't have An Account ?
