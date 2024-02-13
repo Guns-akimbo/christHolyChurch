@@ -16,7 +16,7 @@
 .signwrap {
   width: 80%;
   height: 80%;
-  background: url(../../../assests/birds.png);
+  background: url(../../assests/birds.png);
   background-position: center;
   background-size: 80%;
   background-repeat: no-repeat;
@@ -161,7 +161,7 @@
   .signwrap {
     width: 80%;
     height: 90%;
-    background: url(../../../assests/birds.png);
+    background: url(../../assests/birds.png);
     background-position: center;
     background-size: 0%;
     background-repeat: no-repeat;

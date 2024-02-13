@@ -5,12 +5,9 @@ import Button from "../../Component/Button/Button";
 import Input from "../../Component/Input/Input";
 import "./ProfilePage.css";
 import { FaCamera } from "react-icons/fa";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import { ClipLoader } from "react-spinners";
 
@@ -25,13 +22,7 @@ const ProfilePage = () => {
   const [rankInChurch, setRankInChurch] = useState("");
   const [station, setStation] = useState("");
   const [yearTransferred, setYearTransferred] = useState("");
-  const [imageMime, setImageMime] = useState(null);
-  const [imageFilename, setImageFilename] = useState(null);
-  const [imageFileExtension, setImageFileExtension] = useState(null);
   const [profilePicture, setProfilePicture] = useState(null);
-  const [imageFile, setImageFile] = useState(null);
-
-
 
   const handleChange = (e, data) => {
     const value = e.target.value;
@@ -65,11 +56,6 @@ const ProfilePage = () => {
     }
   };
 
-
-  const getFileExtension = (fileName) => {
-    return `.${fileName.slice(((fileName.lastIndexOf(".") - 1) >>> 0) + 2)}`;
-  };
-
   const handleImageChange = (e) => {
     const file = e.target.files[0];
 
@@ -77,18 +63,9 @@ const ProfilePage = () => {
       // Set profile picture file
       setProfilePicture(file);
       setImagePreview(URL.createObjectURL(file)); // Display image preview
-
-      // Set other image-related states as needed
-      setImageMime(file.type);
-      setImageFilename(file.name);
-      setImageFileExtension(getFileExtension(file.name)); // Call getFileExtension function
     } else {
-      // Reset image-related states if no file is selected
       setProfilePicture(null);
       setImagePreview(null);
-      setImageMime(null);
-      setImageFilename(null);
-      setImageFileExtension(null);
     }
   };
 
@@ -117,9 +94,6 @@ const ProfilePage = () => {
         }
       );
 
-      console.log("FormData before sending:", formData);
-      console.log("firstName:", firstName);
-      console.log("lastName:", lastName);
       setLoading(false);
       toast.success("Successful");
     } catch (err) {
@@ -132,20 +106,6 @@ const ProfilePage = () => {
       setLoading(false);
     }
   };
-
-  console.log(
-    firstName,
-    lastName,
-    gender,
-    phoneNumber,
-    district,
-    rankInChurch,
-    station,
-    yearTransferred,
-    profilePicture
-  );
-
-  
 
   return (
     <form onSubmit={handleSubmit}>

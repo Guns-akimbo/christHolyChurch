@@ -1,7 +1,7 @@
 import "./Signup.css";
 import React, { useState } from "react";
-import Logo from "../../../assests/Logo.png";
-import Button from "../../../Component/Button/Button";
+import Logo from "../../assests/Logo.png";
+import Button from "../Button/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
