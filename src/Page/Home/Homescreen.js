@@ -46,7 +46,7 @@ const HomeScreen = () => {
             <Button text="Signup" backgroundColor="inherit" color="#4A317A" />
           </Link>
         </div>
-        <button onClick={onSubmit}>submit</button>
+        <button onClick={onSubmit}>submited</button>
       </div>
     </div>
   );

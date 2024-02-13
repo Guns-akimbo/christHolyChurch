@@ -102,7 +102,7 @@
   }
   .Logos img {
     height: 60%;
-    width: 10%;
+    width: 14%;
   }
   .Text {
     width: 99%;
@@ -114,10 +114,15 @@
     color: #4a317a;
     text-align: center;
     gap: 1rem;
+    margin-top: 1%;
   }
 
+.Text h1{
+  font-size: 22px;
+}
+
   .Text h3 {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .text {
@@ -132,7 +137,7 @@
   }
 
   .text h1 {
-    font-size: 45px;
+    font-size: 30px;
   }
 
   .text h3 {
