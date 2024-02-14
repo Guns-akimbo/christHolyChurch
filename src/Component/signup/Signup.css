@@ -143,11 +143,15 @@
   
 .sign {
   width: 100%;
-  height: 105vh;
+  height: 100vh;
   background-color: #bfccdc;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.div{
+  
+  width: 100%;
 }
   .signContainer {
     width: 50%;
@@ -203,7 +207,7 @@
     backdrop-filter: blur(5px);
   }
   .signfields {
-    width: 80%;
+    width: 86%;
     height: 80%;
     margin-top: 4%;
     display: flex;

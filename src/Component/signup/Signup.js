@@ -132,16 +132,6 @@ const Signup = () => {
               <div className="signeyeBtn" onClick={handleTogglePassword}>
                 {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
               </div>
-              <div className="div">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="ConfirmPassword"
-                  className="inpu"
-                  // {...register("confirmPassword")}
-                />
-
-                <p className="p">{errors.password?.message} </p>
-              </div>
             </div>
             <div className="signBtn">
               {loading ? (
