@@ -147,7 +147,7 @@ const Signup = () => {
               {loading ? (
                 <ClipLoader color="#36d7b7" />
               ) : (
-                <Button text="Signup" width="220px" type="submit" />
+                <Button text="Signup" width="260px" type="submit" />
               )}
             </div>
           </form>
