@@ -137,7 +137,7 @@
     align-items: center;
     flex-direction: column;
     padding:15px;
-    background-color: red;
+    /* background-color: red; */
   }
 
   .signupinputstyle {
