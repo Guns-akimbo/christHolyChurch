@@ -115,7 +115,7 @@
   }
 
   .signupcontainer {
-    width: 95%;
+    width: 90%;
     height: 90%;
     /* background-color: green; */
     display: flex;
@@ -136,13 +136,14 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    /* background-color: red; */
+    padding:15px;
+    background-color: red;
   }
 
   .signupinputstyle {
     position: relative;
   }
-F
+
   .styleInput {
     width: 310px;
     padding: 5px;
