@@ -12,7 +12,7 @@ const Table = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   let height = 600;
   if (isMobile) {
-    height = 820;
+    height = 800;
   }
   const columns = [
     {
@@ -30,7 +30,7 @@ const Table = () => {
     { field: "station", headerName: "Station", width: 160,  headerClassName: "custom-header", },
     { field: "district", headerName: "District", width: 160,  headerClassName: "custom-header", },
     { field: "gender", headerName: "Gender", width: 160,  headerClassName: "custom-header", },
-    { field: "rankInChurch", headerName: "Rank", width: 180,  headerClassName: "custom-header", },
+    { field: "rankInChurch", headerName: "Rank", width: 160,  headerClassName: "custom-header", },
     { field: "yearTransferred", headerName: "Year Transferred", width: 160,  headerClassName: "custom-header", },
   ];
 
@@ -64,11 +64,11 @@ const Table = () => {
       }}
     >
       <Typography
-        variant="h3"
-        component="h3"
+        variant="h5"
+        component="h5"
         sx={{ textAlign: "center", mt: 3, mb: 3 }}
       >
-        List of all Pastors
+        List of all Ministers
       </Typography>
       <DataGrid
         
