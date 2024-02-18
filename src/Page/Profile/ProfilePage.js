@@ -122,7 +122,7 @@ const ProfilePage = () => {
           </section>
           <section className="right">
             <div className="form">
-              <h1>Fill in the Information</h1>
+              <h1 className="h1">Fill in the Information</h1>
               <div className="registerfield">
                 {Data.map((e, id) => (
                   <div key={e.label}>
