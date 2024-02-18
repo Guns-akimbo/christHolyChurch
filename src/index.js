@@ -6,14 +6,19 @@ import reportWebVitals from "./reportWebVitals";
 import { HashRouter as Router } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const theme = createTheme();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Router>
-      <ToastContainer />
-      <App />
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <ToastContainer />
+        <App />
+      </Router>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

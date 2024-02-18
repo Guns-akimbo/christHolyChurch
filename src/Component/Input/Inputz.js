@@ -7,8 +7,6 @@ export default function Input({
   name,
   onChange,
   className,
-  errors,
-  register,
   ...props
 }) {
   return (
@@ -24,19 +22,7 @@ export default function Input({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        {...(register ? register(name) : {})}
       />
-
-      <p
-        style={{
-          color: "red",
-          lineHeight: "0",
-          fontSize: "13px",
-          marginTop: "1%",
-        }}
-      >
-        {errors[name]?.message}
-      </p>
     </div>
   );
 }

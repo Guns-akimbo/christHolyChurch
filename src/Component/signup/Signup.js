@@ -10,16 +10,11 @@ import * as yup from "yup";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { ClipLoader } from "react-spinners";
+import signUpData from "../../utilites/signUpData";
+import Input from "../Input/Input";
 
-const Signup = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const nav = useNavigate();
-  const handleTogglePassword = () => {
-    setShowPassword((prevShowPassword) => !prevShowPassword);
-  };
-
-  const schema = yup.object({
+const schema = yup
+  .object({
     firstName: yup.string().required("Firstname is needed"),
     lastName: yup.string().required("lastname is needed"),
     email: yup.string().required("Valid Email is required"),
@@ -32,18 +27,57 @@ const Signup = () => {
       .min(8)
       .max(20)
       .required("Password is required,minimum of 8 "),
-  });
+  })
+  .required();
+
+const Signup = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const nav = useNavigate();
+  const handleTogglePassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
+  const values = [
+    {
+      label: "First Name",
+      name: "firstName",
+      type: "text",
+    },
+
+    {
+      label: "Last Name",
+      name: "lastName",
+      type: "text",
+    },
+    {
+      label: "Email",
+      name: "email",
+      type: "email",
+    },
+    {
+      label: "Phone Number",
+      name: "phoneNumber",
+      type: "tel",
+    },
+    {
+      label: "Password",
+      name: "password",
+      type: "password",
+      // type:{showPassword ? "text" : "password"}
+    },
+  ];
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
 
-  const onSubmit = async (data) => {
-    console.log(data);
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
+
+  const Submit = async (data) => {
+    console.log("data");
+    console.log("Form submitted with data:", data);
     try {
       setLoading(true);
       await axios.post(
@@ -67,90 +101,54 @@ const Signup = () => {
 
   return (
     <div className="sign">
-      <div className="signwrap">
-        <div className="signContainer">
-          <div className="Logoo">
-            <img src={Logo} alt="" />
-            <p>Create an Account</p>
-          </div>
+      <div className="signupcontainer">
+        <div className="signupLogo">
+          <img src={Logo} alt="" />
+          <p>Create an Account</p>
+        </div>
+        <form onSubmit={handleSubmit(Submit)} className="signupInputFields">
+          {values.map((data) => (
+            <div className="signupinputstyle" key={data.name}>
+              <Input
+                key={data.name}
+                register={register}
+                name={data.name}
+                className="styleInput"
+                {...data}
+                errors={errors}
+                type={
+                  data.name === "password"
+                    ? showPassword
+                      ? "text"
+                      : "password"
+                    : "text"
+                }
+              />
 
-          <form className="signfields" onSubmit={handleSubmit(onSubmit)}>
-            <div className="inp">
-              <div className="div">
-                <input
-                  type="text"
-                  placeholder="Firstname"
-                  className="inpu"
-                  {...register("firstName")}
-                />
-                <p className="p">{errors.firstName?.message} </p>
-              </div>
-
-              <div className="div">
-                <input
-                  type="text"
-                  placeholder="Lastname"
-                  className="inpu"
-                  {...register("lastName")}
-                />
-                <p className="p">{errors.lastName?.message} </p>
-              </div>
-            </div>
-
-            <div className="inp">
-              <div className="div">
-                <input
-                  type="text"
-                  placeholder="PhoneNumber"
-                  className="inpu"
-                  {...register("phoneNumber")}
-                />
-                <p className="p">{errors.phoneNumber?.message} </p>
-              </div>
-              <div className="div">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="inpu"
-                  {...register("email")}
-                />
-                <p className="p">{errors.email?.message} </p>
-              </div>
-            </div>
-
-            <div className="inp">
-              <div className="div">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  className="inpu"
-                  {...register("password")}
-                />
-
-                <p className="p">{errors.password?.message} </p>
-              </div>
-              <div className="signeyeBtn" onClick={handleTogglePassword}>
-                {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-              </div>
-            </div>
-            <div className="signBtn">
-              {loading ? (
-                <ClipLoader color="#36d7b7" />
-              ) : (
-                <Button text="Signup" width="245px" type="submit" />
+              {data.name === "password" && (
+                <div className="eyebtn" onClick={handleTogglePassword}>
+                  {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                </div>
               )}
             </div>
-          </form>
+          ))}
 
-          <div className="texxt">
-            <p className="texts">
-              Already have an Account!
-              <Link to="/login" style={{ textDecoration: "none" }}>
-                <span style={{ color: "red" }}>Login</span>
-              </Link>{" "}
-            </p>
+          <div className="signupBtn">
+            {loading ? (
+              <ClipLoader color="#36d7b7" />
+            ) : (
+              <Button text="Signup" width="280px" type="submit" />
+            )}
+            <div className="texxt">
+              <p className="texts">
+                Already have an Account!
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  <span style={{ color: "red" }}>Login</span>
+                </Link>{" "}
+              </p>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

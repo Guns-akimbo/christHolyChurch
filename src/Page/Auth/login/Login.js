@@ -95,15 +95,16 @@ const Login = () => {
                 <div className="eyeBtn" onClick={handleTogglePassword}>
                   {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                 </div>
-              </div>
-
-              <div>
-                {loading ? (
+                 {loading ? (
                   <ClipLoader />
                 ) : (
                   <Button text="Login" style={{ width: "230px",borderRadius:"10px solid red" }} />
                 )}
               </div>
+
+               <div className="bubu">
+               
+              </div> 
             </div>
 
             <div className="acc">

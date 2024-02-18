@@ -3,26 +3,11 @@ import "./Homescreen.css";
 import Logo from "../../assests/Logo.png";
 import Button from "../../Component/Button/Button";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import axios from "axios";
+
 
 const HomeScreen = () => {
 
-  const onSubmit = async () => {
-    console.log("clicked")
-    try {
-      const res = await axios.get(
-        "https://christholychurch.onrender.com/api/getall"
-      );
 
-      console.log(res);
-      toast.success("signup sucessfull");
-    } catch (err) {
-      if (err.response.data.message) {
-        toast.error(err.response.data.message);
-      }
-    }
-  };
 
   return (
     <div className="Container">
@@ -46,7 +31,7 @@ const HomeScreen = () => {
             <Button text="Signup" backgroundColor="inherit" color="#4A317A" />
           </Link>
         </div>
-        <button onClick={onSubmit}>submited</button>
+        
       </div>
     </div>
   );

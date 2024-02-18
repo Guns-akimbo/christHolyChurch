@@ -2,14 +2,13 @@ import React from "react";
 import Data from "../../utilites/Data";
 import Logo from "../../assests/Logo.png";
 import Button from "../../Component/Button/Button";
-import Input from "../../Component/Input/Input";
 import "./ProfilePage.css";
 import { FaCamera } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "react-toastify";
-
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ClipLoader } from "react-spinners";
+import Input from "../../Component/Input/Inputz";
 
 const ProfilePage = () => {
   const [loading, setLoading] = useState(false);
@@ -23,6 +22,8 @@ const ProfilePage = () => {
   const [station, setStation] = useState("");
   const [yearTransferred, setYearTransferred] = useState("");
   const [profilePicture, setProfilePicture] = useState(null);
+  const [resetInput, setResetInput] = useState(false);
+  const fileInputRef = useRef(null);
 
   const handleChange = (e, data) => {
     const value = e.target.value;
@@ -93,7 +94,7 @@ const ProfilePage = () => {
           },
         }
       );
-
+      setResetInput((prev) => !prev);
       setLoading(false);
       toast.success("Successful");
     } catch (err) {
@@ -115,7 +116,7 @@ const ProfilePage = () => {
             <div className="clie">
               <div className="Log">
                 <img src={Logo} alt="" />
-                <p>Welcome Victor</p>
+                <p>Welcome</p>
               </div>
             </div>
           </section>
@@ -126,6 +127,8 @@ const ProfilePage = () => {
                 {Data.map((e, id) => (
                   <div key={e.label}>
                     <Input
+                      key={resetInput ? "reset" : "normal"}
+                      ref={fileInputRef}
                       {...e}
                       label={e.label}
                       name={e.name}
@@ -134,19 +137,22 @@ const ProfilePage = () => {
                   </div>
                 ))}
                 <div className="downer">
-                  <label htmlFor="imageUpload">Add Photo</label>
-                  <FaCamera className="cam" />
-                  <div className="circle">
-                    {imagePreview && <img src={imagePreview} alt="Preview" />}{" "}
-                    {/* Display image preview if available */}
-                    <input
-                      type="file"
-                      id="imageUpload"
-                      accept="image/*"
-                      name="addImage"
-                      onChange={handleImageChange}
-                    />
-                  </div>
+                  <label htmlFor="imageUpload">
+                    <p> Add Photo</p>
+                    <div className="circle">
+                      {!imagePreview && <FaCamera className="cam" />}
+                      {imagePreview && <img src={imagePreview} alt="Preview" />}
+                      <input
+                        key={resetInput ? "reset" : "normal"}
+                        ref={fileInputRef}
+                        type="file"
+                        id="imageUpload"
+                        accept="image/*"
+                        name="addImage"
+                        onChange={handleImageChange}
+                      />
+                    </div>
+                  </label>
                 </div>
               </div>
               <footer>

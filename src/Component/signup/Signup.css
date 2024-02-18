@@ -13,21 +13,10 @@
   align-items: center;
 }
 
-.signwrap {
-  width: 80%;
-  height: 80%;
-  background: url(../../assests/birds.png);
-  background-position: center;
-  background-size: 80%;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.signContainer {
-  width: 50%;
+.signupcontainer {
+  width: 25%;
   height: 90%;
+  background-color: green;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -35,64 +24,48 @@
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   backdrop-filter: blur(5px);
+  justify-content: space-between;
+  padding: 5px;
 }
 
-.Logoo {
+.signupLogo {
   width: 100%;
   height: 15%;
-  /* background-color: green; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-size: 18px;
-  margin-top: 3%;
+
   gap: 10px;
 }
 
-.Logoo img {
-  height: 60%;
-  width: 8%;
+.signupLogo img {
+  height: 40%;
+  width: 10%;
 }
 
-.signfields {
-  width: 80%;
-  height: 55%;
-  margin-top: 4%;
+.signupInputFields {
+  width: 100%;
+  height: 87%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.styleInput {
+  width: 340px;
+  border-bottom: 1px solid grey;
+}
+
+.signupBtn {
+  width: 100%;
+  height: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 10px;
-  /* background-color: blue; */
-}
-
-.inp {
-  width: 100%;
-  height: max-content;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-}
-
-.inpu {
-  width: 97%;
-  height: 45px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
+  align-items: flex-start;
   padding-left: 10px;
-}
-
-.p {
-  color: red;
-  font-size: 12px;
-  margin-top: 2%;
-}
-.div {
-  width: 100%;
 }
 
 .texxt {
@@ -100,37 +73,30 @@
   height: 10%;
   display: flex;
   align-items: flex-start;
-  margin-top: 4%;
+  margin-top: 1%;
 }
 
 .texxt p {
   display: flex;
   gap: 5px;
   cursor: pointer;
+  font-size: 14px;
 }
 
-.signBtn {
-  margin-top: 2%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.signeyeBtn {
-  cursor: pointer;
+.signupinputstyle {
   position: relative;
-  right: 25px;
-  bottom: 5px;
+}
+
+.eyebtn {
+  cursor: pointer;
+  position: absolute;
+  bottom: 16px;
+  left: 310px;
 }
 
 .eyeBtnopen:hover {
   color: orange;
   transition: 0.3s ease;
-}
-
-.eyeBtn {
-  cursor: pointer;
 }
 
 .eyeBtn:hover {
@@ -139,75 +105,19 @@
 }
 
 @media (max-width: 767px) {
-  
-.sign {
-  width: 100%;
-  height: 100vh;
-  background-color: #bfccdc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.div{
-  
-  width: 100%;
-}
-
-.inpu {
-  width: 97%;
-  height: 45px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  padding-left: 10px;
-  /* background-color: green; */
-  /* border-bottom: 1px solid grey; */
-}
-  .signContainer {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    /* border-radius: 20px; */
-    backdrop-filter: blur(5px);
-  }
-  
-  .Logoo {
+  .sign {
     width: 100%;
-    height: 15%;
-    /* background-color: green; */
+    height: 100vh;
+    background-color: #bfccdc;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    font-size: 18px;
-    margin-top: 5%;
-    gap: 10px;
   }
 
-  .Logoo img {
+  .signupcontainer {
+    width: 95%;
     height: 80%;
-    width: 20%;
-  }
-
-  .signwrap {
-    width: 75%;
-    height: 100%;
-    background: url(../../assests/birds.png);
-    background-position: center;
-    background-size: 0%;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: green; */
-  }
-  .signContainer {
-    width: 100%;
-    height: 96%;
+    background-color: green;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -215,57 +125,49 @@
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     backdrop-filter: blur(5px);
-  }
-  .signfields {
-    width: 86%;
-    height: 80%;
-    margin-top: 4%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
     padding: 10px;
-    /* background-color: rebeccapurple; */
   }
 
-  .inp {
+  .signupInputFields {
     width: 100%;
-    height: max-content;
+    height: 87%;
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
   }
 
-  .texts{
-    font-size: 10px;
-  }
-
-  .inpu {
-    width: 100%;
-    height: 45px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    padding-left: 10px;
-    color: black;
-  }
-
-  .signBtn {
-    margin-top: 2%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .signeyeBtn {
-    cursor: pointer;
+  .signupinputstyle {
     position: relative;
-    left: 80px;
-    bottom: 45px;
+  }
+F
+  .styleInput {
+    width: 310px;
+    padding: 5px;
+  }
+  .eyebtn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 25px;
+    left: 290px;
   }
 
+  .signupBtn {
+    width: 100%;
+    height: 15%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding-left: 15px; */
+  }
 
+  .texxt {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1%;
+  }
 }
